@@ -1,0 +1,5 @@
+{
+  "default_model": "multilingual",
+  "default_device": "auto",
+  "default_backend": "auto"
+}
