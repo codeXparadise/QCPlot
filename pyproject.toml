@@ -1,0 +1,57 @@
+[project]
+name = "qcplot"
+version = "0.2.0"
+description = "QCPlot — Intelligent Statistical Process Control (SPC) & Quality Control Charting CLI"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12, <3.13"
+authors = [
+    { name = "Vishal Prajapati" }
+]
+keywords = [
+    "statistical-process-control",
+    "spc",
+    "control-charts",
+    "shewhart-chart",
+    "quality-control",
+    "directml",
+    "onnx",
+    "laya",
+    "astm-e2587",
+    "manufacturing"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Manufacturing",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "laya>=0.5.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "onnx>=1.23.2",
+    "onnxruntime-directml>=1.24.4",
+    "onnxscript>=0.7.2",
+    "openpyxl>=3.1.5",
+    "pandas>=3.1.1",
+    "plotext>=6.1.0",
+    "rich>=15.0.0",
+    "torch>=2.6.0",
+    "transformers>=5.17.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/codeXparadise/QCPlot"
+Repository = "https://github.com/codeXparadise/QCPlot"
+Issues = "https://github.com/codeXparadise/QCPlot/issues"
+
+[project.scripts]
+qcplot = "qcplot:main"
+qc-chart-agent = "qcplot:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
