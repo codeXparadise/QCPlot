@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Output artifacts (track directory via .gitkeep)
+outputs/*
+!outputs/.gitkeep
+
+# Model weights & Hugging Face cache (keep config and .gitkeep)
+model/*
+!model/.gitkeep
+!model/qcplot_config.json
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Environment & Local configuration
+.env
+.env.*
+!.env.example
+
+# Logs & Temporary files
+*.log
+*.tmp
+*~
+.ipynb_checkpoints/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
