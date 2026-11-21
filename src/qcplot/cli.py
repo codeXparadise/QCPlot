@@ -437,6 +437,7 @@ def render_rich_help(error_msg: str | None = None) -> None:
         (
             "Setup & Hardware",
             [
+                ("--install", "Auto-detect OS, GPU & install dependencies cross-platform"),
                 ("--init", "First-time setup (folders, config, multilingual pull, ONNX GPU export, sample CSV)"),
                 ("--backend MODE", "Inference engine: auto | onnx | torch (auto picks GPU first)"),
                 ("--device MODE", "Compute target: auto | cuda | rocm | directml | mps | coreml | xpu | cpu"),
@@ -3245,6 +3246,7 @@ def build_parser(default_model: str, default_device: str, default_backend: str) 
         help="Compute target (GPU-first by default)",
     )
     parser.add_argument("--device-info", action="store_true", help="Show CPU/GPU/ONNX providers & active default")
+    parser.add_argument("--install", action="store_true", help="Auto-detect OS, hardware & install all dependencies")
 
     parser.add_argument("--max-rows", type=int, default=12, help="Max rows before truncating table")
     parser.add_argument("--full", action="store_true", help="Show all rows without truncation")
@@ -3266,6 +3268,10 @@ def main() -> None:
     args = parser.parse_args()
 
     # Instant utility commands
+    if args.install:
+        from qcplot.installer import run_installer
+        run_installer(device=args.device)
+        return
     if args.remove:
         cmd_remove_model(args.remove)
         return

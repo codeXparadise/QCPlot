@@ -83,18 +83,21 @@ Saved automatically to `outputs/`:
 
 ## Quickstart
 
-### 1. Install
+### 1. Install & Setup (Cross-Platform)
 
-Clone the repository and install dependencies using `uv` (recommended) or standard `pip`:
+Clone the repository and run the automated cross-platform installer (detects Windows, Linux, macOS, architecture, and GPU acceleration):
 
 ```bash
 git clone https://github.com/codeXparadise/QCPlot.git
 cd QCPlot
 
-# Using uv (fastest)
+# Option A: Standalone Auto-Installer (Windows, Linux, macOS)
+python install.py
+
+# Option B: Using uv (fastest)
 uv sync
 
-# Or standard pip
+# Option C: Standard pip
 pip install -r requirements.txt
 pip install -e .
 ```
@@ -106,6 +109,7 @@ Configures directories, pulls default Laya model, and verifies GPU acceleration:
 ```bash
 uv run qcplot --init
 # or: python main.py --init
+# or: ./scripts/qcplot.sh --init (Linux/macOS) / .\scripts\qcplot.bat --init (Windows)
 ```
 
 ### 3. Run Analysis
